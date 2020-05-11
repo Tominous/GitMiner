@@ -35,8 +35,8 @@ class Parser(object):
         param_list = {user:{}}
         for _param in _parameters:
             for line_param in content_html.split("\n"):
-                #print(content_html)
-                #print(line_param)
+                print(content_html)
+                print(line_param)
                 if _parameters[_param] in line_param:
                     _line_param = line_param.replace(_parameters[_param], \
                                  '{BOLD}{RED}%s{END}' % _parameters[_param])
@@ -93,7 +93,7 @@ class Parser(object):
             try:
                 self.parseParameters(content_html, _parameters, _splitparam, _splitorder, user, filename)
             except Exception as inst:
-                #print(inst)
+                print(inst)
                 pass
         
         if regex is not None:
@@ -127,7 +127,7 @@ class Parser(object):
                 print("{GREEN}[+]{END} {BLUE}LAST INDEXED{END}: %s".format(**colors) \
                       % last_indexed[number_url])
             except Exception as inst:
-                #print(inst)
+                print(inst)
                 pass
             self.codeParser(content_html, config, user[number_url], filename, regex)
 
